@@ -12,6 +12,16 @@ $("#header").prepend(formattedName);
 var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
 $("#header").append(formattedRole);
 
+var photo = bio.biopic;
+var formattedPic = HTMLbioPic.replace("%data%", "biopic");
+$("#header").append(formattedPic);
+
+
+
+
+
+
+
 var bio = {
   "name" : "Damian Galeano",
   "role" : "Web Developer",
@@ -72,7 +82,7 @@ var work = {
       "description" : "I'm a delivery boy on my Planet"
     }, 
     {
-    "employer" : "Planet Express",
+      "employer" : "Planet Express",
       "title" : "Delivery Boy",
       "dates" : "Januray 3000 - Future",
       "description" : "I'm a delivery boy on my Planet"
@@ -116,5 +126,5 @@ for(job in work.jobs) {
   var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
   var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-  $("#work-entry:last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(formattedEmployerTitle);
 } 
