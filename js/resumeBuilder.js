@@ -6,17 +6,19 @@
 //var funThougs = awesomeThougs.replace("AWESOME", "FUN");
   //  $("#main").append(funThougs);
 
-var formattedName  = HTMLheaderName.replace("%data%", "Damian Galeano");
+/* formattedName  = HTMLheaderName.replace("%data%", "Damian Galeano");
 $("#header").prepend(formattedName);
 
 var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
 $("#header").append(formattedRole);
 
-var photo = bio.biopic;
+var formattedContacts = HTMLcontactGeneric.replace("%data%", );
+$("#topContacts").append(formattedContacts);
+
 var formattedPic = HTMLbioPic.replace("%data%", "biopic");
 $("#header").append(formattedPic);
 
-
+*/
 
 
 
@@ -39,6 +41,35 @@ var bio = {
 
 };
 
+
+var name = bio.name;
+formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = bio.role;
+formattedRole = HTMLheaderRole.replace("%data%", role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+var mobile = bio.contacts.mobile;
+formattedMobile = HTMLmobile.replace("%data%", mobile);
+$("#topContacts").append(formattedMobile);
+
+var email = bio.contacts.email;
+var formattedEmail = HTMLemail.replace("%data%", email);
+$("#topContacts").append(formattedEmail);
+
+var gitHub = bio.contacts.gitHub;
+var formattedGit = HTMLgithub.replace("%data%", gitHub);
+$("#topContacts").append(formattedGit);
+
+var twitter = bio.contacts.twitter;
+var formmattedTwitter = HTMLtwitter.replace("%data%", twitter);
+$("#topContacts").append(formmattedTwitter);
+
+var location = bio.contacts.location;
+var formattedlocation = HTMLlocation.replace("%data%", location);
+$("#topContacts").append(formattedlocation);
 
 var education  = {
   "schools" : [
@@ -128,3 +159,5 @@ for(job in work.jobs) {
 
   $(".work-entry:last").append(formattedEmployerTitle);
 } 
+
+
