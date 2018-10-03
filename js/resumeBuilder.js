@@ -41,22 +41,17 @@ var twitter = bio.contacts.twitter;
 var formmattedTwitter = HTMLtwitter.replace("%data%", twitter);
 $("#topContacts").append(formmattedTwitter);
 
-var location = bio.contacts.location;
-var formattedlocation = HTMLlocation.replace("%data%", location);
-$("#topContacts").append(formattedlocation);
+
+var _location = bio.contacts.location;
+var formattedLocation = HTMLlocation.replace("%data%", _location);
+$("#topContacts").append(formattedLocation);
 
 var bioPic = bio.bioPic;
 var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
 $("#header").append(formattedBioPic);
 
-var welcomeMessage = bio.welcomeMessage;
-var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
-$("#header").append(formattedWelcomeMessage);
 
-var skills = bio.skills;
-var formattedSkills = HTMLskills.replace("%data%", skills);
-$("#header").append(HTMLskillsStart);
-$("#skills").append(formattedSkills);
+
 
 var education  = {
   "schools" : [
@@ -95,13 +90,13 @@ var work = {
       "employer" : "Planet Express",
       "title" : "Delivery Boy",
       "dates" : "Januray 3000 - Future",
-      "description" : "I'm a delivery boy on my Planet"
+      "description" : "I'm a delivery boy on my Planet, my job is to distribute pizza all over the galaxy we are planet exprees we live in the year 3000"
     }, 
     {
       "employer" : "Planet Express",
       "title" : "Delivery Boy",
       "dates" : "Januray 3000 - Future",
-      "description" : "I'm a delivery boy on my Planet"
+      "description" : "My job now in addition to distributing pizza all over the planet is to help my nephew the teacher when he has to take dangerous particles to different parts of the space"
     }  
   ]
 };
@@ -109,9 +104,9 @@ var work = {
 var projects = {
   "projects" : [
     {
-      "title" : "Delivery Boy",
-      "dates" : "Januray 3000 - Future",
-      "description" : "I'm a delivery boy on my Planet",
+      "title" : "atomic particle transporter",
+      "dates" : "Januray 3600 - Future",
+      "description" : "I'm a delivery boy on my Planet mi first, my job is to distribute pizza all over the galaxy we are planet exprees we live in the year 3000 ",
       "images" : [
         "images/fry.jpg"
       ]
@@ -135,14 +130,25 @@ if(bio.skills.length > 0) {
   $("#header").append(formattedSkill);
 }
 
-for(job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
 
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+var displayWork = function(){
+  
+  for(job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+  
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  
+    $(".work-entry:last").append(formattedEmployerTitle);
+  
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDates);
+  
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
+  } 
+}
 
-  $(".work-entry:last").append(formattedEmployerTitle);
-} 
 
 
