@@ -1,29 +1,3 @@
-// $("#main").append("Damian Galeano");
-
-//var awesomeThougs = "I'm Damian and I am AWESOME!";
-//console.log(awesomeThougs);
-
-//var funThougs = awesomeThougs.replace("AWESOME", "FUN");
-  //  $("#main").append(funThougs);
-
-/* formattedName  = HTMLheaderName.replace("%data%", "Damian Galeano");
-$("#header").prepend(formattedName);
-
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
-$("#header").append(formattedRole);
-
-var formattedContacts = HTMLcontactGeneric.replace("%data%", );
-$("#topContacts").append(formattedContacts);
-
-var formattedPic = HTMLbioPic.replace("%data%", "biopic");
-$("#header").append(formattedPic);
-
-*/
-
-
-
-
-
 var bio = {
   "name" : "Damian Galeano",
   "role" : "Web Developer",
@@ -37,7 +11,7 @@ var bio = {
 
   "WelcomeMessage" : "Hello everyBody",
   "skills" : ["Web Developer", "Dj", "Entrepreneur"],
-  "biopic" : "images/fry.jpg"
+  "bioPic" : "images/fry.jpg"
 
 };
 
@@ -71,6 +45,19 @@ var location = bio.contacts.location;
 var formattedlocation = HTMLlocation.replace("%data%", location);
 $("#topContacts").append(formattedlocation);
 
+var bioPic = bio.bioPic;
+var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
+$("#header").append(formattedBioPic);
+
+var welcomeMessage = bio.welcomeMessage;
+var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
+$("#header").append(formattedWelcomeMessage);
+
+var skills = bio.skills;
+var formattedSkills = HTMLskills.replace("%data%", skills);
+$("#header").append(HTMLskillsStart);
+$("#skills").append(formattedSkills);
+
 var education  = {
   "schools" : [
     {
@@ -88,8 +75,6 @@ var education  = {
       "major" : ["CS"],
       "dates" : "2013",
       "url" : "https://www.udem.edu.co/"
-
-      
     }
   ],
 
@@ -102,7 +87,7 @@ var education  = {
     }
   ]
 
-}
+};
 
 var work = {
   "jobs": [
@@ -133,7 +118,7 @@ var projects = {
 
     }
   ]
-}
+};
 
 
 
