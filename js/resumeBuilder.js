@@ -152,8 +152,3 @@ var displayWork = function(){
 
 displayWork();
 
-
-$(document).click(function(loc) {
-  
-})
-
