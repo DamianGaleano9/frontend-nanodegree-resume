@@ -152,3 +152,28 @@ var displayWork = function(){
 
 displayWork();
 
+function locationizer (work) {
+ var locationArray = [];
+
+ for(job in work.jobs){
+  var newLocation = work.jobs[job].location;
+  locationArray.push(newLocation);
+ }
+
+ return locationArray;
+
+ console.log(locationizer(work));
+ 
+}
+
+function inName(name) {
+ name = name.trim().split(" ");
+ console.log(name);
+ name[1] = name[1].toUpperCase();
+ name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+ return name[0] + " " + name[1];
+
+}
+
+$("#main").append(internationalizeButton);
